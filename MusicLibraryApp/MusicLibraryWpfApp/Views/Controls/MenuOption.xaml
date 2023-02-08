@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="MusicLibraryWpfApp.Views.Controls.MenuOption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:MusicLibraryWpfApp.Views.Converters"
+             mc:Ignorable="d"
+             HorizontalAlignment="Left"
+             x:Name="MenuOptionControl">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\StyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:SelectedToBackgroundColorConverter x:Key="SelectedToBackgroundColorConverter">
+                <converters:SelectedToBackgroundColorConverter.ResourceDictionary>
+                    <ResourceDictionary Source="..\StyleDictionary.xaml" />
+                </converters:SelectedToBackgroundColorConverter.ResourceDictionary>
+            </converters:SelectedToBackgroundColorConverter>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Viewbox>
+        <Button Grid.Column="1" Style="{StaticResource MenuOptionButtonStyle}" Click="Button_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="32" Height="32" Source="{Binding Image, ElementName=MenuOptionControl}" Margin="0,0,5,0" />
+                <TextBlock VerticalAlignment="Center"
+                           Style="{StaticResource TextBlockStyle}"
+                           Text="{Binding Text, ElementName=MenuOptionControl}"  
+                           Foreground="{Binding Selected, ElementName=MenuOptionControl, Converter={StaticResource SelectedToBackgroundColorConverter}}" />
+            </StackPanel>
+        </Button>
+    </Viewbox>
+</UserControl>

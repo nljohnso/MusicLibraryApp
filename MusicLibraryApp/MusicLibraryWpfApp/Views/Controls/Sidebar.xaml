@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="MusicLibraryWpfApp.Views.Controls.Sidebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicLibraryWpfApp.Views.Controls"
+             xmlns:enums="clr-namespace:MusicLibraryWpfApp"
+             xmlns:converters="clr-namespace:MusicLibraryWpfApp.Views.Converters"
+             mc:Ignorable="d"
+             Background="{DynamicResource BackgroundColor}"
+             d:DesignHeight="800" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\StyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:SelectedPageToBoolConverter x:Key="SelectedPageToBoolConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="MenuOptionsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <local:MenuOption Grid.Row="0" Text="Home" 
+                              Image="/Resources/home.png" 
+                              Click="MenuOption_Click"
+                              Selected="{Binding CurrentPage, 
+                                         Converter={StaticResource SelectedPageToBoolConverter}, 
+                                         ConverterParameter={x:Static enums:PageTypes.Home}}"
+                              Tag="{x:Static enums:PageTypes.Home}" />
+            <local:MenuOption Grid.Row="1" Text="Library" 
+                              Image="/Resources/library.png" 
+                              Click="MenuOption_Click" 
+                              Selected="{Binding CurrentPage, 
+                                         Converter={StaticResource SelectedPageToBoolConverter}, 
+                                         ConverterParameter={x:Static enums:PageTypes.Library}}"
+                              Tag="{x:Static enums:PageTypes.Library}" />
+        </Grid>
+        
+        <Separator Grid.Row="1" Margin="10,0" Background="{StaticResource SecondaryAccentColor}" />
+        
+        <!-- List folders/playlists? in the future -->
+
+        <Separator Grid.Row="3" Margin="10,0" Background="{StaticResource SecondaryAccentColor}" />
+        
+        <Image Grid.Row="4" Source="/Resources/empty-art.png" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="UniformToFill" />
+    </Grid>
+</UserControl>

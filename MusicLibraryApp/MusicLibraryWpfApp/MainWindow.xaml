@@ -3,10 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MusicLibraryWpfApp"
+        xmlns:controls="clr-namespace:MusicLibraryWpfApp.Views.Controls"
+        xmlns:pages="clr-namespace:MusicLibraryWpfApp.Views.Pages"
+        xmlns:vmPages="clr-namespace:MusicLibraryWpfApp.ViewModels.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Icon="/Resources/musical-note.png"
+        Background="{DynamicResource BackgroundColor}"
+        Title="Music Library" 
+        WindowStartupLocation="CenterOwner"
+        Height="900" Width="1200"
+        MinHeight="900" MinWidth="1200"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Views/StyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="275" MaxWidth="450" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <controls:Sidebar Grid.Column="0" />
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" Background="{StaticResource PrimaryAccentColor}" />
+        <Grid Grid.Column="2">
+            <ContentPresenter Content="{Binding CurrentPage}">
+                <ContentPresenter.Resources>
+                    <DataTemplate DataType="{x:Type vmPages:HomePageViewModel}">
+                        <pages:HomePage />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vmPages:LibraryPageViewModel}">
+                        <pages:LibraryPage />
+                    </DataTemplate>
+                </ContentPresenter.Resources>
+            </ContentPresenter>
+        </Grid>
     </Grid>
 </Window>

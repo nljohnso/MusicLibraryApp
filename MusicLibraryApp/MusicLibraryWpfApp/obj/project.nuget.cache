@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7D6y/tnYW5jNvyZ2XyeBWl6pcC1tV3z2pOdbTzF2D29aizZMLsmEDZRNPuhpojNHB5GLSN2k+cT6bJOGfBEs7Q==",
+  "dgSpecHash": "PMX+YmPJxhskcJGM/Dl5Y4RsqpAbBYLTkl4k7gFxauZKyIX1UB5uIUwSwXICedY5vTPZJKC3K1iHUlkqNpTCeQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nik\\source\\repos\\MusicLibraryApp\\MusicLibraryApp\\MusicLibraryWpfApp\\MusicLibraryWpfApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Nik\\.nuget\\packages\\folderbrowserforwpf\\1.2.0\\folderbrowserforwpf.1.2.0.nupkg.sha512",
+    "C:\\Users\\Nik\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

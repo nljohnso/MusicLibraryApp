@@ -1,11 +1,71 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "FolderBrowserForWPF/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/FolderBrowserForWPF.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/FolderBrowserForWPF.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "TagLibSharp/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "related": ".pdb"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FolderBrowserForWPF/1.2.0": {
+      "sha512": "CSVh14iL4unRKBSOjWakdch3dJDS6r/sboQ7yoKEbfHEldVcPa8lXqkTtLb2eicFVVS3bGJIBXC3mPKe8CYd/g==",
+      "type": "package",
+      "path": "folderbrowserforwpf/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "folderbrowserforwpf.1.2.0.nupkg.sha512",
+        "folderbrowserforwpf.nuspec",
+        "lib/net472/FolderBrowserForWPF.dll",
+        "lib/net5.0-windows7.0/FolderBrowserForWPF.dll"
+      ]
+    },
+    "TagLibSharp/2.3.0": {
+      "sha512": "Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "type": "package",
+      "path": "taglibsharp/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TagLibSharp.dll",
+        "lib/net462/TagLibSharp.pdb",
+        "lib/net462/TaglibSharp.xml",
+        "lib/netstandard2.0/TagLibSharp.dll",
+        "lib/netstandard2.0/TagLibSharp.pdb",
+        "lib/netstandard2.0/TaglibSharp.xml",
+        "taglibsharp.2.3.0.nupkg.sha512",
+        "taglibsharp.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "FolderBrowserForWPF >= 1.2.0",
+      "TagLibSharp >= 2.3.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Nik\\.nuget\\packages\\": {}
@@ -45,6 +105,16 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "FolderBrowserForWPF": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "TagLibSharp": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="MusicLibraryWpfApp.Views.Pages.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicLibraryWpfApp.Views.Pages"
+             mc:Ignorable="d" 
+             Background="{DynamicResource BackgroundColor}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\StyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Viewbox>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="30,0,30,30">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Text="To Your Music Library" 
+                   Foreground="{StaticResource SecondaryAccentColor}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontFamily="Onyx"
+                   Margin="0,-53,0,0"
+                   FontSize="70"/>
+                <TextBlock Grid.Row="0" Text="Welcome" 
+                   Foreground="{StaticResource PrimaryAccentColor}" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom"
+                   FontFamily="Brush Script MT" 
+                   Margin="0,0,0,0"
+                   FontSize="100" />
+            </Grid>
+            <Button Grid.Row="1" Margin="0,0,0,100" 
+                    Width="225" Content="Select Music Directory"
+                    Command="{Binding OpenMusicDirectory}"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

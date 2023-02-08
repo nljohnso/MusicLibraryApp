@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Nik\source\repos\MusicLibraryApp\MusicLibraryApp\MusicLibraryWpfApp\App.xaml
-11407045341
+8-676884903
 
-51528016274
-194237474483
-MainWindow.xaml;
+31763256141
+196565190292
+MainWindow.xaml;Views\Controls\CatalogListControl.xaml;Views\Controls\MenuOption.xaml;Views\Controls\Sidebar.xaml;Views\Controls\SongsDataGrid.xaml;Views\Pages\HomePage.xaml;Views\Pages\LibraryPage.xaml;Views\StyleDictionary.xaml;
 
 False
 
